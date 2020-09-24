@@ -1,0 +1,14 @@
+{
+    "name": "kevinlozada/phpapijson",
+    "description": "Proyecto base PHP API JSONplaceholder",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "kevinlozada1102",
+            "email": "kevinlozada1102@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
