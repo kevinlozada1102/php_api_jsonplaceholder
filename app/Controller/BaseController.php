@@ -8,10 +8,10 @@ interface BaseController {
 
     public function obtener();
 
-    public function create();
-
-    public function update();
+    public function createupdate();
 
     public function delete();
+
+    public function formulario();
 
 }

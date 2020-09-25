@@ -1,6 +1,7 @@
 <?php
 
 require '../vendor/autoload.php';
+require '../config/database.php';
 
 $controller = "\App\Controller\PostController";
 

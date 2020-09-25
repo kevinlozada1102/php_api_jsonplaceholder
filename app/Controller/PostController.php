@@ -17,14 +17,9 @@ class PostController implements BaseController {
         $this->view('post_listado',$posts);
     }
 
-    public function create()
+    public function createupdate()
     {
         // TODO: Implement create() method.
-    }
-
-    public function update()
-    {
-        // TODO: Implement update() method.
     }
 
     public function delete()
@@ -34,7 +29,7 @@ class PostController implements BaseController {
         }
         if ($status == 200){
             $posts = $this->postService->listarTodos('posts');
-            $mensaje = "Importante, el recurso no se eliminará realmente en el servidor, pero se falsificará como si lo fuera.";
+            $mensaje = "ELIMINACIÓN EXITOSA. Importante, el recurso no se eliminará realmente en el servidor, pero se falsificará como si lo fuera.";
             $posts['mensaje'] = $mensaje;
             $this->view('post_listado',$posts);
         } else {
@@ -52,9 +47,21 @@ class PostController implements BaseController {
         $this->view('post_info',$post);
     }
 
-    public function view($vista,$datos){
-        $data = $datos;
-        require_once  __DIR__ . "/../../resources/views/" . $vista . ".php";
+    public function formulario()
+    {
+        if(isset($_REQUEST['id'])){
+            $post = $this->postService->obtenerPorId('posts', $_REQUEST['id']);
+            $this->view('post_form',$post);
+        } else {
+            $this->view('post_form');
+        }
 
     }
+
+    public function view($vista,$datos = null){
+        $data = $datos;
+        require_once  __DIR__ . "/../../resources/views/" . $vista . ".php";
+    }
+
+
 }

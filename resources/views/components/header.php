@@ -24,7 +24,8 @@
         <div class="nav-wrapper">
             <a href="index.php" class="brand-logo">Logo</a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="index.php" >Post</a></li>
+                <li><a href="index.php" >API Post </a></li>
+                <li><a href="?c=Album&a=index" >DB Post </a></li>
             </ul>
         </div>
     </nav>
