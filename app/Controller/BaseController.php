@@ -6,6 +6,8 @@ interface BaseController {
 
     public function index();
 
+    public function obtener();
+
     public function create();
 
     public function update();

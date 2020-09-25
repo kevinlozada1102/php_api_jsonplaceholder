@@ -22,10 +22,9 @@
 <div class="navbar-fixed">
     <nav>
         <div class="nav-wrapper">
-            <a href="#!" class="brand-logo">Logo</a>
+            <a href="index.php" class="brand-logo">Logo</a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="sass.html">Post</a></li>
-                <li><a href="badges.html">Álbunes</a></li>
+                <li><a href="index.php" >Post</a></li>
             </ul>
         </div>
     </nav>

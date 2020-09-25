@@ -3,21 +3,28 @@
         <div class="row">
                 <h3>Listado de Post</h3>
                 <?php
-                    foreach ($productos as $producto) {
+                    if (isset($data["mensaje"])) {
+                        echo "
+                                <script>
+                                    var texto ='<span>{$data["mensaje"]}</span>'
+                                    M.toast({html: texto, classes: 'rounded'});
+                                </script>";
+                    }
+                    foreach ($data as $post) {
                         print_r( " <div class=\"col m12\">
                                                 <div class=\"card horizontal\">
                                                     <div class=\"card-stacked\">
                                                         <div class=\"card-content\">
-                                                            <span class=\"card-title activator grey-text text-darken-4\">$producto->id. $producto->title</span>
-                                                            <p>$producto->body</p>
+                                                            <a class=\"card-title activator grey-text text-darken-4\" href=\"?c=Post&a=obtener&id={$post["id"]}\">{$post["id"]}. {$post["title"]}</a>
+                                                           
                                                         </div>
                                                         <div class=\"card-action\">
                                                             <button class=\"btn waves-effect waves-light  blue darken-4\" type=\"submit\" name=\"action\">Editar
                                                                 <i class=\"material-icons right\">edit</i>
                                                             </button>
-                                                            <button class=\"btn waves-effect waves-light  red darken-1\" type=\"submit\" name=\"action\">Eliminar
+                                                            <a class='btn waves-effect waves-light  red darken-1' type='submit' name='action' href='?c=Post&a=delete&id={$post["id"]}'>Eliminar
                                                                 <i class=\"material-icons right\">delete</i>
-                                                            </button>
+                                                            </a>
                                                         </div>
                                                     </div>
                                                 </div>
